@@ -206,7 +206,7 @@
 
     .stats {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
 
@@ -221,7 +221,7 @@
 
     .stat-number {
       color: var(--pink-dark);
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 750;
     }
 
@@ -250,11 +250,6 @@
 
     .event {
       position: relative;
-      margin-bottom: 22px;
-    }
-
-    .event:last-child {
-      margin-bottom: 0;
     }
 
     .event::before {
@@ -297,7 +292,7 @@
       line-height: 1.5;
     }
 
-    /* MEMORY CARDS */
+    /* MEMORIES */
 
     .memory-grid {
       display: grid;
@@ -469,36 +464,6 @@
       line-height: 1.5;
     }
 
-    /* NEXT MONTH */
-
-    .next-date {
-      text-align: center;
-      padding: 21px;
-
-      background: linear-gradient(
-        135deg,
-        rgba(255,227,237,.92),
-        rgba(255,245,249,.92)
-      );
-
-      border: 1px solid var(--border);
-      border-radius: 20px;
-    }
-
-    .next-date-label {
-      color: var(--muted);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 7px;
-    }
-
-    .next-date-number {
-      color: var(--pink-dark);
-      font-size: 20px;
-      font-weight: 750;
-    }
-
     /* FOOTER */
 
     footer {
@@ -605,23 +570,21 @@
         <div class="stats">
 
           <div class="stat">
-            <div class="stat-number">08.26.26</div>
-            <div class="stat-label">we met</div>
-          </div>
-
-          <div class="stat">
-            <div class="stat-number">09.13.26</div>
-            <div class="stat-label">we got together</div>
-          </div>
-
-          <div class="stat">
-            <div
-              class="stat-number"
-              id="next-month-number"
-            >
-              —
+            <div class="stat-number">
+              September 13, 2026
             </div>
-            <div class="stat-label">next month</div>
+            <div class="stat-label">
+              the day we started dating
+            </div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-number">
+              <span id="days-together">19</span>
+            </div>
+            <div class="stat-label">
+              days together
+            </div>
           </div>
 
         </div>
@@ -642,27 +605,19 @@
         <div class="timeline">
 
           <div class="event">
-            <div class="event-date">August 26, 2026</div>
-            <h3>we met</h3>
-            <p>
-              The day we first met through TikTok.
-            </p>
-          </div>
 
-          <div class="event">
-            <div class="event-date">September 13, 2026</div>
-            <h3>we became us</h3>
-            <p>
-              The day we officially got together ♡
-            </p>
-          </div>
+            <div class="event-date">
+              September 13, 2026
+            </div>
 
-          <div class="event">
-            <div class="event-date">today</div>
-            <h3>still us</h3>
+            <h3>
+              we started dating
+            </h3>
+
             <p>
-              Another day together.
+              The day we became us.
             </p>
+
           </div>
 
         </div>
@@ -684,22 +639,6 @@
 
           <div class="memory">
             <div class="memory-icon">♡</div>
-            <h3>the beginning</h3>
-            <p>
-              August 26, 2026 — where everything started.
-            </p>
-          </div>
-
-          <div class="memory">
-            <div class="memory-icon">୨ৎ</div>
-            <h3>our first month</h3>
-            <p>
-              Our first little milestone together.
-            </p>
-          </div>
-
-          <div class="memory">
-            <div class="memory-icon">♡</div>
             <h3>late nights</h3>
             <p>
               The calls and conversations that somehow last forever.
@@ -708,9 +647,25 @@
 
           <div class="memory">
             <div class="memory-icon">୨ৎ</div>
-            <h3>making memories</h3>
+            <h3>random moments</h3>
             <p>
-              All the random little moments that become our favorites.
+              All the little things that turn into memories.
+            </p>
+          </div>
+
+          <div class="memory">
+            <div class="memory-icon">♡</div>
+            <h3>laughing together</h3>
+            <p>
+              The random moments that make us laugh.
+            </p>
+          </div>
+
+          <div class="memory">
+            <div class="memory-icon">୨ৎ</div>
+            <h3>being together</h3>
+            <p>
+              Honestly, that's enough sometimes.
             </p>
           </div>
 
@@ -760,16 +715,21 @@
           <div class="favorite">
 
             <div class="favorite-left">
-              <div class="favorite-icon">♡</div>
+
+              <div class="favorite-icon">
+                ♡
+              </div>
 
               <div>
                 <div class="favorite-name">
                   Kaqer's color
                 </div>
+
                 <div class="favorite-value">
                   purple
                 </div>
               </div>
+
             </div>
 
             <div>💜</div>
@@ -780,16 +740,21 @@
           <div class="favorite">
 
             <div class="favorite-left">
-              <div class="favorite-icon">♡</div>
+
+              <div class="favorite-icon">
+                ♡
+              </div>
 
               <div>
                 <div class="favorite-name">
                   Sky's color
                 </div>
+
                 <div class="favorite-value">
                   pink
                 </div>
               </div>
+
             </div>
 
             <div>🩷</div>
@@ -800,16 +765,21 @@
           <div class="favorite">
 
             <div class="favorite-left">
-              <div class="favorite-icon">♡</div>
+
+              <div class="favorite-icon">
+                ♡
+              </div>
 
               <div>
                 <div class="favorite-name">
                   flowers
                 </div>
+
                 <div class="favorite-value">
                   lilies
                 </div>
               </div>
+
             </div>
 
             <div>🌸</div>
@@ -820,16 +790,21 @@
           <div class="favorite">
 
             <div class="favorite-left">
-              <div class="favorite-icon">♡</div>
+
+              <div class="favorite-icon">
+                ♡
+              </div>
 
               <div>
                 <div class="favorite-name">
                   love language
                 </div>
+
                 <div class="favorite-value">
                   physical touch
                 </div>
               </div>
+
             </div>
 
             <div>♡</div>
@@ -853,14 +828,37 @@
 
         <div class="little-things">
 
-          <div class="tag">random calls</div>
-          <div class="tag">staying up together</div>
-          <div class="tag">checking on each other</div>
-          <div class="tag">sending random things</div>
-          <div class="tag">laughing at nothing</div>
-          <div class="tag">being annoying together</div>
-          <div class="tag">missing each other</div>
-          <div class="tag">just being us</div>
+          <div class="tag">
+            random calls
+          </div>
+
+          <div class="tag">
+            staying up together
+          </div>
+
+          <div class="tag">
+            checking on each other
+          </div>
+
+          <div class="tag">
+            sending random things
+          </div>
+
+          <div class="tag">
+            laughing at nothing
+          </div>
+
+          <div class="tag">
+            being annoying together
+          </div>
+
+          <div class="tag">
+            missing each other
+          </div>
+
+          <div class="tag">
+            just being us
+          </div>
 
         </div>
 
@@ -886,8 +884,13 @@
             </div>
 
             <div>
-              <h3>We met</h3>
-              <p>August 26, 2026</p>
+              <h3>
+                We started dating
+              </h3>
+
+              <p>
+                September 13, 2026
+              </p>
             </div>
 
           </div>
@@ -900,8 +903,13 @@
             </div>
 
             <div>
-              <h3>We got together</h3>
-              <p>September 13, 2026</p>
+              <h3>
+                1 month together
+              </h3>
+
+              <p>
+                October 13, 2026
+              </p>
             </div>
 
           </div>
@@ -914,8 +922,13 @@
             </div>
 
             <div>
-              <h3>1 month together</h3>
-              <p>October 13, 2026</p>
+              <h3>
+                6 months together
+              </h3>
+
+              <p>
+                March 13, 2027
+              </p>
             </div>
 
           </div>
@@ -928,22 +941,13 @@
             </div>
 
             <div>
-              <h3>6 months together</h3>
-              <p>March 13, 2027</p>
-            </div>
+              <h3>
+                1 year together
+              </h3>
 
-          </div>
-
-
-          <div class="milestone">
-
-            <div class="milestone-heart">
-              ♡
-            </div>
-
-            <div>
-              <h3>1 year together</h3>
-              <p>September 13, 2027</p>
+              <p>
+                September 13, 2027
+              </p>
             </div>
 
           </div>
@@ -954,44 +958,20 @@
     </section>
 
 
-    <!-- NEXT MONTH -->
-    <section>
-      <div class="section-card">
-
-        <div class="section-title">
-          <span>♡</span>
-          next little milestone
-        </div>
-
-        <div class="next-date">
-
-          <div class="next-date-label">
-            our next month
-          </div>
-
-          <div
-            class="next-date-number"
-            id="next-month-date"
-          >
-            October 13, 2026
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- NOTE -->
+    <!-- FINAL -->
     <section>
       <div class="section-card note">
 
-        <div class="note-heart">♡</div>
+        <div class="note-heart">
+          ♡
+        </div>
 
-        <h2>kaqer & sky</h2>
+        <h2>
+          kaqer & sky
+        </h2>
 
         <p>
-          just two people making memories together.
+          just us.
         </p>
 
       </div>
@@ -1000,7 +980,9 @@
 
     <footer>
 
-      <div class="heart">♡</div>
+      <div class="heart">
+        ♡
+      </div>
 
       09.13.26 — always us.
 
@@ -1067,13 +1049,19 @@
 
 
       const yearText =
-        years === 1 ? "year" : "years";
+        years === 1
+          ? "year"
+          : "years";
 
       const monthText =
-        months === 1 ? "month" : "months";
+        months === 1
+          ? "month"
+          : "months";
 
       const dayText =
-        days === 1 ? "day" : "days";
+        days === 1
+          ? "day"
+          : "days";
 
 
       document.getElementById(
@@ -1084,72 +1072,19 @@
         `${days} ${dayText}`;
 
 
-      updateNextMonth();
-
-    }
-
-
-    function updateNextMonth() {
-
-      const now = new Date();
-
-      let nextYear =
-        now.getFullYear();
-
-      let nextMonth =
-        now.getMonth();
-
-      if (
-        now.getDate() >=
-        startDate.getDate()
-      ) {
-
-        nextMonth++;
-
-        if (nextMonth > 11) {
-
-          nextMonth = 0;
-          nextYear++;
-
-        }
-
-      }
-
-
-      const nextDate =
-        new Date(
-          nextYear,
-          nextMonth,
-          startDate.getDate()
-        );
-
-
-      const formatted =
-        nextDate.toLocaleDateString(
-          "en-US",
-          {
-            month: "long",
-            day: "numeric",
-            year: "numeric"
-          }
+      const totalDays =
+        Math.floor(
+          (
+            now.getTime() -
+            startDate.getTime()
+          ) / 86400000
         );
 
 
       document.getElementById(
-        "next-month-date"
-      ).textContent = formatted;
-
-
-      document.getElementById(
-        "next-month-number"
+        "days-together"
       ).textContent =
-        nextDate.toLocaleDateString(
-          "en-US",
-          {
-            month: "short",
-            day: "numeric"
-          }
-        );
+        Math.max(0, totalDays);
 
     }
 
