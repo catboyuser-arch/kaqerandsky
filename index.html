@@ -13,81 +13,211 @@
 
     body {
       margin: 0;
-      background: #ffd8e8;
-      color: #3a2830;
+      background: #ffd9e8;
+      color: #34252d;
       font-family: Arial, sans-serif;
-      padding: 25px;
+      overflow-x: hidden;
+    }
+
+    /* BACKGROUND CHARACTERS */
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      z-index: -1;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    body::before {
+      width: 300px;
+      height: 300px;
+      left: -70px;
+      top: 90px;
+
+      /* Hello Kitty */
+      background-image: url("hello-kitty.png");
+    }
+
+    body::after {
+      width: 340px;
+      height: 340px;
+      right: -80px;
+      bottom: 40px;
+
+      /* Batman Hello Kitty */
+      background-image: url("batman-hello-kitty.png");
     }
 
     .container {
-      max-width: 850px;
+      max-width: 950px;
       margin: auto;
-      text-align: center;
+      padding: 30px 20px 60px;
     }
 
-    .decor {
-      color: #ff78aa;
-      font-size: 24px;
-      margin-bottom: 10px;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5px 35px;
+    }
+
+    .logo {
+      color: #ff5f9d;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #70475a;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .hero {
+      background: rgba(255, 241, 246, 0.92);
+      border: 2px solid #ffb8d2;
+      border-radius: 30px;
+      padding: 70px 25px;
+      text-align: center;
+      box-shadow: 0 12px 35px rgba(150, 70, 110, .12);
+    }
+
+    .symbols {
+      color: #ff78ad;
+      font-size: 25px;
+      margin-bottom: 15px;
     }
 
     h1 {
+      margin: 0;
       color: #ff5f9d;
-      font-size: 42px;
-      margin: 5px;
+      font-size: clamp(45px, 10vw, 80px);
     }
 
-    .intro {
-      color: #8e5a70;
-      margin-bottom: 30px;
+    .hero p {
+      max-width: 500px;
+      margin: 15px auto 0;
+      color: #805267;
+      line-height: 1.7;
     }
 
-    .section {
-      background: #fff0f6;
-      border: 2px solid #ffb5d0;
+    .date {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 10px 18px;
+      background: #ffd3e4;
+      border-radius: 50px;
+      color: #9b5575;
+      font-size: 14px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .person {
+      background: rgba(255, 241, 246, 0.94);
+      border: 2px solid #ffb8d2;
       border-radius: 25px;
-      padding: 25px;
-      margin-bottom: 25px;
-      text-align: left;
-      box-shadow: 0 8px 25px rgba(170, 80, 120, .12);
+      padding: 30px;
+      text-align: center;
     }
 
-    .section h2 {
-      text-align: center;
+    .person h2 {
       color: #ff6fa8;
       margin-top: 0;
     }
 
-    .info {
-      line-height: 1.8;
-      font-size: 15px;
+    .nickname {
+      color: #9b6078;
+      margin-bottom: 20px;
     }
 
-    .favorite {
-      color: #ff619e;
+    .person p {
+      line-height: 1.7;
+      color: #684352;
     }
 
-    .couple {
-      text-align: center;
-      line-height: 1.8;
-    }
-
-    .batman {
-      background: #29262d;
-      color: #ffd8e8;
-      border-radius: 22px;
-      padding: 22px;
+    .story {
+      margin-top: 20px;
+      background: rgba(41, 38, 45, 0.96);
+      color: #ffd9e8;
+      border-radius: 25px;
+      padding: 35px;
       text-align: center;
     }
 
-    .batman span {
-      color: #ff9fc3;
+    .story h2 {
+      color: #ff9fc4;
+      margin-top: 0;
     }
 
-    .footer {
+    .story p {
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    .favorites {
+      margin-top: 20px;
+      background: rgba(255, 241, 246, 0.94);
+      border: 2px solid #ffb8d2;
+      border-radius: 25px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .favorites h2 {
+      color: #ff6fa8;
+    }
+
+    .tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      background: #ffd3e4;
+      padding: 9px 15px;
+      border-radius: 50px;
+      color: #8e4f6c;
+      font-size: 14px;
+    }
+
+    footer {
       text-align: center;
       color: #a45e7c;
-      margin-top: 25px;
+      margin-top: 30px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 650px) {
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      body::before {
+        width: 180px;
+        height: 180px;
+        left: -60px;
+      }
+
+      body::after {
+        width: 200px;
+        height: 200px;
+        right: -70px;
+      }
     }
   </style>
 </head>
@@ -96,127 +226,111 @@
 
 <div class="container">
 
-  <div class="decor">୨ৎ ✿ 𐙚 ✿ ୨ৎ</div>
+  <nav>
+    <div class="logo">୨ৎ us ♡</div>
 
-  <h1>us ♡</h1>
+    <div>
+      <a href="#about">about</a>
+      <a href="#story">story</a>
+      <a href="#favorites">favorites</a>
+    </div>
+  </nav>
 
-  <p class="intro">
-    a little page about us and our relationship
-  </p>
+  <section class="hero">
 
-  <div class="section">
+    <div class="symbols">୨ৎ ✿ 𐙚 ✿ ୨ৎ</div>
 
-    <h2>୨ৎ ABOUT HIM ୨ৎ</h2>
+    <h1>kaqer & sky</h1>
 
-    <div class="info">
+    <p>
+      two people who met from a random TikTok
+      and somehow became each other's favorite person.
+    </p>
 
-      ♡ nickname: Kaqer<br>
-      ♡ age: 16<br>
-      ♡ pronouns: he/him<br>
-      ♡ zodiac: Virgo<br>
-      ♡ favorite color: purple<br>
-      ♡ favorite food: white rice & chicken<br>
-      ♡ favorite drink: piña colada<br>
-      ♡ favorite artist: Lil Peep<br>
-      ♡ favorite game: Fortnite<br>
-      ♡ favorite animal: dog<br>
-      ♡ favorite flower: lilies<br>
-      ♡ favorite hobby: playing games<br>
-      ♡ favorite place: my setup<br>
-      ♡ love language: physical touch<br>
-      ♡ biggest fear: everyone leaving me<br>
-      ♡ likes: my bunny<br>
-      ♡ relationship status: OBVIOUSLY TAKEN<br>
+    <div class="date">
+      together since 09.13.26 ♡
+    </div>
 
-      <br>
+  </section>
 
-      <span class="favorite">
-        ♡ my favorite thing about her: her personality and face<br>
-        ♡ my favorite memory: calling every day and playing Fortnite together<br>
-        ♡ how we met: through a TikTok video<br>
-        ♡ date we met: August 26, 2026<br>
-        ♡ date we got together: September 13, 2026<br>
-        ♡ things i love about her: everything<br>
-        ♡ one word to describe her: SAFE
-      </span>
+  <section class="about" id="about">
+
+    <div class="person">
+
+      <h2>୨ৎ kaqer</h2>
+
+      <div class="nickname">he / him</div>
+
+      <p>
+        gamer, Lil Peep listener, purple lover
+        and Sky's boyfriend.
+      </p>
+
+      <p>
+        ♡ favorite color: purple<br>
+        ♡ favorite game: Fortnite<br>
+        ♡ favorite artist: Lil Peep
+      </p>
 
     </div>
 
-  </div>
+    <div class="person">
 
-  <div class="section">
+      <h2>୨ৎ sky</h2>
 
-    <h2>୨ৎ ABOUT HER ୨ৎ</h2>
+      <div class="nickname">she / her</div>
 
-    <div class="info">
+      <p>
+        artist, plushie lover, gamer
+        and Kaqer's girlfriend.
+      </p>
 
-      ♡ nickname: Sky<br>
-      ♡ age: 15<br>
-      ♡ pronouns: she/her<br>
-      ♡ zodiac: Libra<br>
-      ♡ favorite color: light colors<br>
-      ♡ favorite food: spicy food<br>
-      ♡ favorite drink: pineapple Fanta<br>
-      ♡ favorite artist: Bad Bunny<br>
-      ♡ favorite games: Roblox, Fortnite & Minecraft<br>
-      ♡ favorite flowers: lilies<br>
-      ♡ favorite hobby: drawing<br>
-      ♡ favorite place: my bed<br>
-      ♡ love language: physical touch<br>
-      ♡ biggest fear: balloons<br>
-      ♡ likes: my boyfriend & plushies<br>
-      ♡ dislikes: weird people, being alone & other boys 🌝<br>
-      ♡ relationship status: TAKEN 4LIFE 🙏🏽
+      <p>
+        ♡ favorite color: light colors<br>
+        ♡ favorite hobby: drawing<br>
+        ♡ favorite games: Roblox & Fortnite
+      </p>
 
+    </div>
+
+  </section>
+
+  <section class="story" id="story">
+
+    <h2>୨ৎ our story ୨ৎ</h2>
+
+    <p>
+      we met on August 26, 2026 through a TikTok video.
+      neither of us probably expected that random video
+      to turn into something like this. ♡
       <br><br>
+      on September 13, 2026, we became official.
+      since then we've been making memories, playing games,
+      calling each other and just being there for each other.
+    </p>
 
-      ♡ my favorite thing about him: his personality and face<br>
-      ♡ how we met: through a TikTok video<br>
-      ♡ date we met: August 26, 2026<br>
-      ♡ date we got together: September 13, 2026<br>
-      ♡ things i love about him: EVERYTHING 😼<br>
-      ♡ why he's special: he makes me feel loved and appreciated
+  </section>
 
+  <section class="favorites" id="favorites">
+
+    <h2>୨ৎ things we love ୨ৎ</h2>
+
+    <div class="tags">
+      <div class="tag">♡ Fortnite</div>
+      <div class="tag">♡ calling</div>
+      <div class="tag">♡ gaming</div>
+      <div class="tag">♡ music</div>
+      <div class="tag">♡ drawing</div>
+      <div class="tag">♡ plushies</div>
+      <div class="tag">♡ making memories</div>
+      <div class="tag">♡ each other</div>
     </div>
 
-  </div>
+  </section>
 
-  <div class="section couple">
-
-    <h2>୨ৎ OUR STORY ୨ৎ</h2>
-
-    <p>
-      we met through a TikTok video on August 26, 2026.
-      somehow that random TikTok ended up bringing us together.
-      then on September 13, 2026, we officially got together. ♡
-    </p>
-
-    <p>
-      we've already made so many memories together,
-      from calling each other to playing games together
-      and just talking about random stuff.
-    </p>
-
-    <p>
-      we're not perfect and we've had our arguments,
-      but we're still here and still choosing each other.
-    </p>
-
-  </div>
-
-  <div class="batman">
-
-    ୨ৎ・<span>BATMAN HELLO KITTY × HELLO KITTY</span>・୨ৎ
-
-    <br><br>
-
-    just two people who somehow found each other ♡
-
-  </div>
-
-  <div class="footer">
-    ✿ made for us ✿
-  </div>
+  <footer>
+    ୨ৎ made for us ♡ ୨ৎ
+  </footer>
 
 </div>
 
