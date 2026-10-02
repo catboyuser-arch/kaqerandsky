@@ -4,24 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>kaqer ♡ sky</title>
+  <title>kaqer & sky ♡</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     :root {
       --pink: #ef629d;
       --pink-dark: #c94b80;
       --pink-light: #ffe3ed;
-      --pink-soft: #fff4f8;
+      --pink-soft: #fff5f9;
+      --white: rgba(255,255,255,.84);
       --text: #3b2932;
       --muted: #936578;
-      --border: rgba(230, 130, 165, .28);
-      --shadow: 0 18px 55px rgba(111, 53, 76, .13);
+      --border: rgba(230,130,165,.25);
+      --shadow: 0 18px 55px rgba(111,53,76,.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -29,29 +30,29 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
       color: var(--text);
-      background: #ffd9e7;
       min-height: 100vh;
-      overflow-x: hidden;
+      background: #ffdce9;
     }
-
-    /* BACKGROUND */
 
     body::before {
       content: "";
       position: fixed;
       inset: 0;
+
       background:
         linear-gradient(
-          rgba(255, 220, 233, .76),
-          rgba(255, 220, 233, .76)
+          rgba(255, 220, 233, .78),
+          rgba(255, 220, 233, .78)
         ),
         url("IMG_2606.jpeg");
 
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+
       z-index: -2;
     }
 
@@ -59,386 +60,490 @@
       content: "";
       position: fixed;
       inset: 0;
-      background: rgba(255, 242, 247, .08);
+      background: rgba(255,255,255,.08);
       backdrop-filter: blur(2px);
       z-index: -1;
       pointer-events: none;
     }
 
-    /* APP */
-
     .app {
       width: min(760px, 92%);
       margin: auto;
-      padding: 20px 0 50px;
+      padding: 20px 0 60px;
     }
 
     /* NAV */
 
     .nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 8px 2px 20px;
+      justify-content: space-between;
+      padding: 14px 17px;
+      margin-bottom: 20px;
+
+      background: rgba(255,255,255,.68);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
     }
 
-    .logo {
-      color: var(--pink-dark);
-      font-size: 17px;
+    .nav-name {
       font-weight: 700;
+      font-size: 15px;
+      letter-spacing: .2px;
     }
 
     .nav-heart {
-      width: 38px;
-      height: 38px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
+
       display: flex;
       align-items: center;
       justify-content: center;
 
-      background: rgba(255, 248, 251, .82);
-      border: 1px solid var(--border);
-      color: var(--pink);
-      font-size: 18px;
+      background: var(--pink-light);
+      color: var(--pink-dark);
+      font-size: 17px;
     }
 
     /* HERO */
 
     .hero {
-      position: relative;
-      overflow: hidden;
-
-      padding: 48px 25px 38px;
       text-align: center;
+      padding: 45px 20px 35px;
 
-      background: rgba(255, 248, 251, .9);
+      background: rgba(255,255,255,.66);
       border: 1px solid var(--border);
-      border-radius: 38px;
+      border-radius: 30px;
 
       box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(18px);
     }
 
-    .hero::before {
-      content: "♡";
-      position: absolute;
-      font-size: 190px;
-      color: rgba(239, 98, 157, .045);
-      right: -25px;
-      top: -75px;
-      transform: rotate(12deg);
-    }
-
-    .hero-kicker {
-      color: var(--pink);
-      font-size: 12px;
-      letter-spacing: 3px;
-      text-transform: lowercase;
-      margin-bottom: 13px;
+    .hero-small {
+      color: var(--pink-dark);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
     }
 
     .hero h1 {
-      color: var(--pink-dark);
-      font-size: clamp(45px, 10vw, 76px);
-      line-height: .95;
-      letter-spacing: -3px;
-      position: relative;
+      font-size: clamp(38px, 9vw, 62px);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 14px;
     }
 
-    .hero-subtitle {
+    .hero-sub {
       color: var(--muted);
-      font-size: 13px;
-      margin-top: 15px;
+      font-size: 15px;
     }
-
-    /* COUNTER */
 
     .counter {
-      margin: 28px auto 0;
-      max-width: 430px;
+      margin: 28px auto 10px;
+      padding: 18px 20px;
 
-      padding: 22px 15px;
-      background: var(--pink-soft);
-      border-radius: 25px;
-      border: 1px solid rgba(238, 132, 169, .2);
+      width: fit-content;
+      min-width: 240px;
+
+      background: rgba(255,255,255,.8);
+      border: 1px solid var(--border);
+      border-radius: 20px;
     }
 
     .counter-label {
-      color: var(--muted);
       font-size: 11px;
-      text-transform: lowercase;
-      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      color: var(--muted);
+      margin-bottom: 7px;
     }
 
-    #relationship-time {
-      color: var(--pink);
-      font-size: 31px;
+    .counter-time {
+      color: var(--pink-dark);
+      font-size: 22px;
       font-weight: 750;
     }
 
     .since {
-      color: #a06a7e;
-      font-size: 11px;
-      margin-top: 7px;
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    /* PROFILE ROW */
+    /* SECTIONS */
 
-    .profiles {
+    section {
+      margin-top: 18px;
+    }
+
+    .section-card {
+      background: rgba(255,255,255,.72);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 24px;
+
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      font-size: 19px;
+      margin-bottom: 17px;
+    }
+
+    .section-title span {
+      color: var(--pink);
+    }
+
+    /* QUICK STATS */
+
+    .stats {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 14px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
     }
 
-    .profile {
-      padding: 24px 18px;
+    .stat {
+      padding: 17px 8px;
       text-align: center;
 
-      background: rgba(255, 248, 251, .9);
+      background: rgba(255,245,249,.9);
       border: 1px solid var(--border);
-      border-radius: 28px;
-
-      box-shadow: 0 10px 35px rgba(111, 53, 76, .08);
-      backdrop-filter: blur(7px);
+      border-radius: 18px;
     }
 
-    .avatar {
-      width: 58px;
-      height: 58px;
-      margin: 0 auto 13px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 50%;
-      background: var(--pink-light);
+    .stat-number {
       color: var(--pink-dark);
       font-size: 20px;
-      font-weight: 700;
+      font-weight: 750;
     }
 
-    .profile h2 {
-      color: var(--pink-dark);
-      font-size: 20px;
-    }
-
-    .profile .pronouns {
-      color: var(--muted);
-      font-size: 11px;
+    .stat-label {
       margin-top: 4px;
-    }
-
-    .profile .mini {
-      color: #855466;
-      font-size: 12px;
-      line-height: 1.6;
-      margin-top: 13px;
-    }
-
-    /* SECTION */
-
-    .section {
-      margin-top: 14px;
-      padding: 27px;
-
-      background: rgba(255, 248, 251, .9);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-
-      box-shadow: 0 10px 35px rgba(111, 53, 76, .07);
-      backdrop-filter: blur(7px);
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 19px;
-    }
-
-    .section-heading h2 {
-      color: var(--pink-dark);
-      font-size: 19px;
-    }
-
-    .section-heading span {
-      color: #d4779d;
-      font-size: 15px;
+      font-size: 11px;
+      color: var(--muted);
     }
 
     /* STORY */
 
     .timeline {
       position: relative;
-      padding-left: 20px;
+      padding-left: 23px;
     }
 
     .timeline::before {
       content: "";
       position: absolute;
-      left: 4px;
+      left: 5px;
       top: 5px;
       bottom: 5px;
-      width: 1px;
-      background: #f1adc6;
+      width: 2px;
+      background: var(--pink-light);
     }
 
     .event {
       position: relative;
-      padding: 0 0 22px 17px;
+      margin-bottom: 22px;
     }
 
     .event:last-child {
-      padding-bottom: 0;
+      margin-bottom: 0;
     }
 
     .event::before {
-      content: "";
+      content: "♡";
       position: absolute;
-      left: -1px;
-      top: 4px;
+      left: -29px;
+      top: 0;
 
-      width: 10px;
-      height: 10px;
+      width: 15px;
+      height: 15px;
 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: var(--pink);
+      background: white;
       border-radius: 50%;
-      background: var(--pink);
-      border: 3px solid #fff4f8;
+
+      font-size: 12px;
     }
 
     .event-date {
-      color: var(--pink);
-      font-size: 10px;
+      color: var(--pink-dark);
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 1px;
       text-transform: uppercase;
+      letter-spacing: .8px;
+      margin-bottom: 4px;
     }
 
     .event h3 {
-      color: #704455;
-      font-size: 14px;
-      margin-top: 4px;
+      font-size: 16px;
+      margin-bottom: 4px;
     }
 
     .event p {
       color: var(--muted);
-      font-size: 12px;
-      line-height: 1.6;
-      margin-top: 4px;
+      font-size: 13px;
+      line-height: 1.5;
     }
 
-    /* DETAILS */
+    /* MEMORY CARDS */
 
-    .details {
+    .memory-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 9px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 11px;
     }
 
-    .detail {
-      padding: 15px;
-      border-radius: 18px;
-      background: var(--pink-soft);
+    .memory {
+      padding: 19px;
+      min-height: 110px;
+
+      background: rgba(255,245,249,.88);
+      border: 1px solid var(--border);
+      border-radius: 19px;
     }
 
-    .detail-label {
-      color: #aa7184;
-      font-size: 10px;
+    .memory-icon {
+      font-size: 20px;
+      color: var(--pink);
+      margin-bottom: 9px;
+    }
+
+    .memory h3 {
+      font-size: 14px;
       margin-bottom: 5px;
     }
 
-    .detail-value {
-      color: #75485c;
+    .memory p {
+      color: var(--muted);
       font-size: 12px;
-      font-weight: 600;
+      line-height: 1.45;
     }
 
     /* FAVORITES */
 
-    .tags {
+    .favorite-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .favorite {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 14px 16px;
+
+      background: rgba(255,245,249,.88);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+    }
+
+    .favorite-left {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .favorite-icon {
+      width: 32px;
+      height: 32px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--pink-light);
+      border-radius: 11px;
+
+      color: var(--pink-dark);
+    }
+
+    .favorite-name {
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .favorite-value {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* LITTLE THINGS */
+
+    .little-things {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
 
     .tag {
-      padding: 9px 13px;
-      background: var(--pink-light);
-      color: #88516a;
-      border-radius: 30px;
-      font-size: 11px;
-    }
+      padding: 10px 13px;
 
-    /* BOTTOM MESSAGE */
+      background: var(--pink-soft);
+      border: 1px solid var(--border);
+      border-radius: 999px;
 
-    .ending {
-      margin-top: 14px;
-      padding: 31px 22px;
-      text-align: center;
-
-      background: #30272d;
-      color: #ffdce9;
-      border-radius: 28px;
-
-      box-shadow: var(--shadow);
-    }
-
-    .ending-heart {
-      color: #ff91b7;
-      font-size: 25px;
-      margin-bottom: 9px;
-    }
-
-    .ending h2 {
-      font-size: 19px;
-      color: #ffb0cb;
-    }
-
-    .ending p {
-      color: #e9bdcd;
+      color: var(--pink-dark);
       font-size: 12px;
-      margin-top: 7px;
+      font-weight: 600;
     }
+
+    /* MILESTONES */
+
+    .milestones {
+      display: grid;
+      gap: 10px;
+    }
+
+    .milestone {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+
+      padding: 15px;
+
+      background: rgba(255,245,249,.88);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+    }
+
+    .milestone-heart {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--pink-light);
+      border-radius: 13px;
+
+      color: var(--pink-dark);
+    }
+
+    .milestone h3 {
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .milestone p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* NOTE */
+
+    .note {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .note-heart {
+      font-size: 28px;
+      color: var(--pink);
+      margin-bottom: 10px;
+    }
+
+    .note h2 {
+      font-size: 22px;
+      margin-bottom: 7px;
+    }
+
+    .note p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* NEXT MONTH */
+
+    .next-date {
+      text-align: center;
+      padding: 21px;
+
+      background: linear-gradient(
+        135deg,
+        rgba(255,227,237,.92),
+        rgba(255,245,249,.92)
+      );
+
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+
+    .next-date-label {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 7px;
+    }
+
+    .next-date-number {
+      color: var(--pink-dark);
+      font-size: 20px;
+      font-weight: 750;
+    }
+
+    /* FOOTER */
 
     footer {
       text-align: center;
-      color: #a36179;
-      font-size: 10px;
-      margin-top: 22px;
+      padding: 30px 0 5px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer .heart {
+      color: var(--pink);
+      font-size: 18px;
+      margin-bottom: 5px;
     }
 
     /* MOBILE */
 
-    @media (max-width: 560px) {
-
+    @media (max-width: 520px) {
       .app {
         width: 94%;
+        padding-top: 12px;
       }
 
       .hero {
-        padding: 40px 18px 32px;
+        padding: 38px 17px 30px;
       }
 
-      .profiles {
+      .section-card {
+        padding: 20px;
+      }
+
+      .stats {
+        gap: 7px;
+      }
+
+      .stat {
+        padding: 14px 5px;
+      }
+
+      .memory-grid {
         grid-template-columns: 1fr;
       }
 
-      .profile {
-        padding: 22px;
-      }
-
-      .details {
-        grid-template-columns: 1fr;
-      }
-
-      .section {
-        padding: 23px 20px;
-      }
-
-      #relationship-time {
-        font-size: 27px;
+      .hero h1 {
+        letter-spacing: -1.5px;
       }
     }
   </style>
@@ -446,28 +551,25 @@
 
 <body>
 
-  <div class="app">
+  <main class="app">
 
     <!-- NAV -->
-
-    <div class="nav">
-      <div class="logo">୨ৎ kaqer ♡ sky</div>
+    <nav class="nav">
+      <div class="nav-name">୨ৎ kaqer ♡ sky</div>
       <div class="nav-heart">♡</div>
-    </div>
+    </nav>
+
 
     <!-- HERO -->
+    <header class="hero">
 
-    <section class="hero">
-
-      <div class="hero-kicker">
-        ୨ৎ just us ୨ৎ
-      </div>
+      <div class="hero-small">୨ৎ just us ୨ৎ</div>
 
       <h1>kaqer & sky</h1>
 
-      <p class="hero-subtitle">
-        together ♡
-      </p>
+      <div class="hero-sub">
+        together since September 13, 2026
+      </div>
 
       <div class="counter">
 
@@ -475,230 +577,497 @@
           we've been together for
         </div>
 
-        <div id="relationship-time">
-          0 months, 0 days
-        </div>
-
-        <div class="since">
-          since September 13, 2026
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- PEOPLE -->
-
-    <section class="profiles">
-
-      <div class="profile">
-
-        <div class="avatar">K</div>
-
-        <h2>kaqer</h2>
-
-        <div class="pronouns">
-          he / him
-        </div>
-
-        <div class="mini">
-          purple ♡<br>
-          quiet but loving
+        <div
+          class="counter-time"
+          id="relationship-time"
+        >
+          0 years, 0 months, 19 days
         </div>
 
       </div>
 
-      <div class="profile">
-
-        <div class="avatar">S</div>
-
-        <h2>sky</h2>
-
-        <div class="pronouns">
-          she / her
-        </div>
-
-        <div class="mini">
-          pink ♡<br>
-          sweet & creative
-        </div>
-
+      <div class="since">
+        since September 13, 2026
       </div>
 
-    </section>
+    </header>
 
-    <!-- STORY -->
 
-    <section class="section">
+    <!-- QUICK STATS -->
+    <section>
+      <div class="section-card">
 
-      <div class="section-heading">
-        <h2>୨ৎ our story</h2>
-        <span>♡</span>
-      </div>
+        <div class="section-title">
+          <span>♡</span>
+          us
+        </div>
 
-      <div class="timeline">
+        <div class="stats">
 
-        <div class="event">
-
-          <div class="event-date">
-            August 26, 2026
+          <div class="stat">
+            <div class="stat-number">08.26.26</div>
+            <div class="stat-label">we met</div>
           </div>
 
-          <h3>we met</h3>
-
-          <p>
-            the day our story started.
-          </p>
-
-        </div>
-
-        <div class="event">
-
-          <div class="event-date">
-            September 13, 2026
+          <div class="stat">
+            <div class="stat-number">09.13.26</div>
+            <div class="stat-label">we got together</div>
           </div>
 
-          <h3>we became us</h3>
-
-          <p>
-            officially together ♡
-          </p>
-
-        </div>
-
-        <div class="event">
-
-          <div class="event-date">
-            today
+          <div class="stat">
+            <div
+              class="stat-number"
+              id="next-month-number"
+            >
+              —
+            </div>
+            <div class="stat-label">next month</div>
           </div>
 
-          <h3>still us</h3>
-
-          <p>
-            another day together.
-          </p>
-
         </div>
 
       </div>
-
     </section>
 
-    <!-- LITTLE DETAILS -->
 
-    <section class="section">
+    <!-- OUR STORY -->
+    <section>
+      <div class="section-card">
 
-      <div class="section-heading">
-        <h2>♡ little things</h2>
-        <span>୨ৎ</span>
-      </div>
-
-      <div class="details">
-
-        <div class="detail">
-          <div class="detail-label">kaqer's color</div>
-          <div class="detail-value">purple ♡</div>
+        <div class="section-title">
+          <span>♡</span>
+          our story
         </div>
 
-        <div class="detail">
-          <div class="detail-label">sky's color</div>
-          <div class="detail-value">pink ♡</div>
-        </div>
+        <div class="timeline">
 
-        <div class="detail">
-          <div class="detail-label">our vibe</div>
-          <div class="detail-value">cute & comfortable</div>
-        </div>
+          <div class="event">
+            <div class="event-date">August 26, 2026</div>
+            <h3>we met</h3>
+            <p>
+              The day we first met through TikTok.
+            </p>
+          </div>
 
-        <div class="detail">
-          <div class="detail-label">our thing</div>
-          <div class="detail-value">making memories</div>
-        </div>
+          <div class="event">
+            <div class="event-date">September 13, 2026</div>
+            <h3>we became us</h3>
+            <p>
+              The day we officially got together ♡
+            </p>
+          </div>
 
-        <div class="detail">
-          <div class="detail-label">love language</div>
-          <div class="detail-value">physical touch</div>
-        </div>
+          <div class="event">
+            <div class="event-date">today</div>
+            <h3>still us</h3>
+            <p>
+              Another day together.
+            </p>
+          </div>
 
-        <div class="detail">
-          <div class="detail-label">favorite thing</div>
-          <div class="detail-value">being together</div>
         </div>
 
       </div>
-
     </section>
+
+
+    <!-- MEMORIES -->
+    <section>
+      <div class="section-card">
+
+        <div class="section-title">
+          <span>♡</span>
+          memories
+        </div>
+
+        <div class="memory-grid">
+
+          <div class="memory">
+            <div class="memory-icon">♡</div>
+            <h3>the beginning</h3>
+            <p>
+              August 26, 2026 — where everything started.
+            </p>
+          </div>
+
+          <div class="memory">
+            <div class="memory-icon">୨ৎ</div>
+            <h3>our first month</h3>
+            <p>
+              Our first little milestone together.
+            </p>
+          </div>
+
+          <div class="memory">
+            <div class="memory-icon">♡</div>
+            <h3>late nights</h3>
+            <p>
+              The calls and conversations that somehow last forever.
+            </p>
+          </div>
+
+          <div class="memory">
+            <div class="memory-icon">୨ৎ</div>
+            <h3>making memories</h3>
+            <p>
+              All the random little moments that become our favorites.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
 
     <!-- THINGS WE LIKE -->
+    <section>
+      <div class="section-card">
 
-    <section class="section">
+        <div class="section-title">
+          <span>♡</span>
+          things we like
+        </div>
 
-      <div class="section-heading">
-        <h2>୨ৎ things we like</h2>
-        <span>♡</span>
+        <div class="little-things">
+
+          <div class="tag">calling</div>
+          <div class="tag">late nights</div>
+          <div class="tag">laughing together</div>
+          <div class="tag">hanging out</div>
+          <div class="tag">making memories</div>
+          <div class="tag">being together</div>
+          <div class="tag">little surprises</div>
+          <div class="tag">talking for hours</div>
+
+        </div>
+
       </div>
-
-      <div class="tags">
-
-        <div class="tag">calling</div>
-        <div class="tag">late nights</div>
-        <div class="tag">laughing together</div>
-        <div class="tag">hanging out</div>
-        <div class="tag">making memories</div>
-        <div class="tag">being together</div>
-
-      </div>
-
     </section>
 
-    <!-- END -->
 
-    <section class="ending">
+    <!-- FAVORITES -->
+    <section>
+      <div class="section-card">
 
-      <div class="ending-heart">♡</div>
+        <div class="section-title">
+          <span>♡</span>
+          our favorites
+        </div>
 
-      <h2>kaqer & sky</h2>
+        <div class="favorite-list">
 
-      <p>
-        09.13.26 — forever sounds nice.
-      </p>
+          <div class="favorite">
 
+            <div class="favorite-left">
+              <div class="favorite-icon">♡</div>
+
+              <div>
+                <div class="favorite-name">
+                  Kaqer's color
+                </div>
+                <div class="favorite-value">
+                  purple
+                </div>
+              </div>
+            </div>
+
+            <div>💜</div>
+
+          </div>
+
+
+          <div class="favorite">
+
+            <div class="favorite-left">
+              <div class="favorite-icon">♡</div>
+
+              <div>
+                <div class="favorite-name">
+                  Sky's color
+                </div>
+                <div class="favorite-value">
+                  pink
+                </div>
+              </div>
+            </div>
+
+            <div>🩷</div>
+
+          </div>
+
+
+          <div class="favorite">
+
+            <div class="favorite-left">
+              <div class="favorite-icon">♡</div>
+
+              <div>
+                <div class="favorite-name">
+                  flowers
+                </div>
+                <div class="favorite-value">
+                  lilies
+                </div>
+              </div>
+            </div>
+
+            <div>🌸</div>
+
+          </div>
+
+
+          <div class="favorite">
+
+            <div class="favorite-left">
+              <div class="favorite-icon">♡</div>
+
+              <div>
+                <div class="favorite-name">
+                  love language
+                </div>
+                <div class="favorite-value">
+                  physical touch
+                </div>
+              </div>
+            </div>
+
+            <div>♡</div>
+
+          </div>
+
+        </div>
+
+      </div>
     </section>
+
+
+    <!-- LITTLE THINGS -->
+    <section>
+      <div class="section-card">
+
+        <div class="section-title">
+          <span>୨ৎ</span>
+          little things
+        </div>
+
+        <div class="little-things">
+
+          <div class="tag">random calls</div>
+          <div class="tag">staying up together</div>
+          <div class="tag">checking on each other</div>
+          <div class="tag">sending random things</div>
+          <div class="tag">laughing at nothing</div>
+          <div class="tag">being annoying together</div>
+          <div class="tag">missing each other</div>
+          <div class="tag">just being us</div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- MILESTONES -->
+    <section>
+      <div class="section-card">
+
+        <div class="section-title">
+          <span>♡</span>
+          milestones
+        </div>
+
+        <div class="milestones">
+
+          <div class="milestone">
+
+            <div class="milestone-heart">
+              ♡
+            </div>
+
+            <div>
+              <h3>We met</h3>
+              <p>August 26, 2026</p>
+            </div>
+
+          </div>
+
+
+          <div class="milestone">
+
+            <div class="milestone-heart">
+              ♡
+            </div>
+
+            <div>
+              <h3>We got together</h3>
+              <p>September 13, 2026</p>
+            </div>
+
+          </div>
+
+
+          <div class="milestone">
+
+            <div class="milestone-heart">
+              ♡
+            </div>
+
+            <div>
+              <h3>1 month together</h3>
+              <p>October 13, 2026</p>
+            </div>
+
+          </div>
+
+
+          <div class="milestone">
+
+            <div class="milestone-heart">
+              ♡
+            </div>
+
+            <div>
+              <h3>6 months together</h3>
+              <p>March 13, 2027</p>
+            </div>
+
+          </div>
+
+
+          <div class="milestone">
+
+            <div class="milestone-heart">
+              ♡
+            </div>
+
+            <div>
+              <h3>1 year together</h3>
+              <p>September 13, 2027</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- NEXT MONTH -->
+    <section>
+      <div class="section-card">
+
+        <div class="section-title">
+          <span>♡</span>
+          next little milestone
+        </div>
+
+        <div class="next-date">
+
+          <div class="next-date-label">
+            our next month
+          </div>
+
+          <div
+            class="next-date-number"
+            id="next-month-date"
+          >
+            October 13, 2026
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- NOTE -->
+    <section>
+      <div class="section-card note">
+
+        <div class="note-heart">♡</div>
+
+        <h2>kaqer & sky</h2>
+
+        <p>
+          just two people making memories together.
+        </p>
+
+      </div>
+    </section>
+
 
     <footer>
-      ୨ৎ made with love ୨ৎ
+
+      <div class="heart">♡</div>
+
+      09.13.26 — always us.
+
     </footer>
 
-  </div>
+  </main>
+
 
   <script>
-    const startDate = new Date("2026-09-13T00:00:00");
+
+    const startDate =
+      new Date("2026-09-13T00:00:00");
+
 
     function updateRelationshipTime() {
+
       const now = new Date();
 
-      let months =
-        (now.getFullYear() - startDate.getFullYear()) * 12 +
-        (now.getMonth() - startDate.getMonth());
+      let years =
+        now.getFullYear() -
+        startDate.getFullYear();
 
-      let days = now.getDate() - startDate.getDate();
+      let months =
+        now.getMonth() -
+        startDate.getMonth();
+
+      let days =
+        now.getDate() -
+        startDate.getDate();
+
 
       if (days < 0) {
+
         months--;
 
-        const previousMonth = new Date(
-          now.getFullYear(),
-          now.getMonth(),
-          0
-        );
+        const previousMonth =
+          new Date(
+            now.getFullYear(),
+            now.getMonth(),
+            0
+          );
 
         days += previousMonth.getDate();
+
       }
 
+
       if (months < 0) {
+
+        years--;
+
+        months += 12;
+
+      }
+
+
+      if (years < 0) {
+
+        years = 0;
         months = 0;
         days = 0;
+
       }
+
+
+      const yearText =
+        years === 1 ? "year" : "years";
 
       const monthText =
         months === 1 ? "month" : "months";
@@ -706,14 +1075,92 @@
       const dayText =
         days === 1 ? "day" : "days";
 
-      document.getElementById("relationship-time").textContent =
-        `${months} ${monthText}, ${days} ${dayText}`;
+
+      document.getElementById(
+        "relationship-time"
+      ).textContent =
+        `${years} ${yearText}, ` +
+        `${months} ${monthText}, ` +
+        `${days} ${dayText}`;
+
+
+      updateNextMonth();
+
     }
+
+
+    function updateNextMonth() {
+
+      const now = new Date();
+
+      let nextYear =
+        now.getFullYear();
+
+      let nextMonth =
+        now.getMonth();
+
+      if (
+        now.getDate() >=
+        startDate.getDate()
+      ) {
+
+        nextMonth++;
+
+        if (nextMonth > 11) {
+
+          nextMonth = 0;
+          nextYear++;
+
+        }
+
+      }
+
+
+      const nextDate =
+        new Date(
+          nextYear,
+          nextMonth,
+          startDate.getDate()
+        );
+
+
+      const formatted =
+        nextDate.toLocaleDateString(
+          "en-US",
+          {
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+          }
+        );
+
+
+      document.getElementById(
+        "next-month-date"
+      ).textContent = formatted;
+
+
+      document.getElementById(
+        "next-month-number"
+      ).textContent =
+        nextDate.toLocaleDateString(
+          "en-US",
+          {
+            month: "short",
+            day: "numeric"
+          }
+        );
+
+    }
+
 
     updateRelationshipTime();
 
-    /* Refresh automatically every minute */
-    setInterval(updateRelationshipTime, 60000);
+    setInterval(
+      updateRelationshipTime,
+      60000
+    );
+
   </script>
 
 </body>
